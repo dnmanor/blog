@@ -1,0 +1,25 @@
+{
+  "name": "dnmanor_blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+    "start": "npx @11ty/eleventy --serve --quiet",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "dotenv": "^16.4.5"
+  }
+}
