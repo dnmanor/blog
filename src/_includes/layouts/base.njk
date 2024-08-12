@@ -43,16 +43,16 @@
         {% block header %}
             {% include "../../_components/_header.njk" %}
         {% endblock %}
-        {# {% if page.url === '/' %}
-                                    {% block hero %}
-                                        {% include '../_components/_hero.njk' %}
-                                    {% endblock hero %}
-                                {% endif %}
-                                <main id="content" role="main">
-                                    {{ content | safe }}
-                                </main>
-                                {% block footer %}
-                                    {% include "../_components/_footer.njk" %}
-                                {% endblock %} #}
+        {% if page.url === '/' %}
+            {% block hero %}
+                {% include '../../_components/_hero.njk' %}
+            {% endblock hero %}
+        {% endif %}
+        {# <main id="content" role="main">
+            {{ content | safe }}
+        </main>
+        {% block footer %}
+            {% include "../_components/_footer.njk" %}
+        {% endblock %} #}
     </body>
 </html>
