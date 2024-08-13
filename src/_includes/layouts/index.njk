@@ -1,0 +1,22 @@
+---
+layout: /layouts/base.njk
+pagination:
+  data: collections.posts
+  size: 3
+  reverse: true
+  filter:
+    - posts
+---
+
+{# {% block featuredWorks %}
+  {% include '../_components/_featuredWorks.njk' %}
+{% endblock featuredWorks %} #}
+{% block postslists %}
+  {% set postslist = pagination.items %}
+  {% include '../../_components/_postslist.njk' %}
+{% endblock postslists %}
+
+{# <p class="p-5 font-bold text-3xl mb-4 px-5 max-w-screen-xl lg:mx-auto">What I am listening to lately...</p>
+{% block listening%}
+  {% include '../_components/_listening.njk' %}
+{%endblock listening%} #}

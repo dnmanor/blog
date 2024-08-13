@@ -1,0 +1,10 @@
+{
+  "name": "Davids's personal site & portfolio",
+  "short_name": "david",
+  "icons": [
+  ],
+  "theme_color": "",
+  "background_color": "",
+  "display": "standalone",
+  "start_url": "https://dnmanor.com"
+}

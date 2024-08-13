@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/index.njk
 metaTitle: David Manor
 metaDescription: Software engineer.
 title: I am David.
