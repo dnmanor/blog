@@ -6,17 +6,18 @@ pagination:
   reverse: true
   filter:
     - posts
+
+eleventyImport:
+  collections: ["post"]
 ---
 
-{# {% block featuredWorks %}
-  {% include '../_components/_featuredWorks.njk' %}
-{% endblock featuredWorks %} #}
+{% block hero %}
+  {% include '../../_components/_hero.njk' %}
+{% endblock hero %}
 {% block postslists %}
   {% set postslist = pagination.items %}
   {% include '../../_components/_postslist.njk' %}
 {% endblock postslists %}
-
-{# <p class="p-5 font-bold text-3xl mb-4 px-5 max-w-screen-xl lg:mx-auto">What I am listening to lately...</p>
-{% block listening%}
-  {% include '../_components/_listening.njk' %}
-{%endblock listening%} #}
+{% block recent_music %}
+  {% include '../../_components/_recentlisten.njk' %}
+{% endblock recent_music %}

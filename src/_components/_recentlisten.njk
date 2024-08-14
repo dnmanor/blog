@@ -1,0 +1,27 @@
+<div class="px-5 max-w-screen-xl lg:mx-auto mt-8">
+    <p class="text-lg font-bold mb-3">What I last listened to ...</p>
+    <div class="flex flex-col items-start w-full"> <!-- Changed items-center to items-start -->
+        {% if music.recent_music %}
+            {% for item in music.recent_music %}
+            {# {% set artist_names = item.track.album.artists | map('name') | join(', ') %} #}
+                <a href="{{ item.track.external_urls.spotify }}" target="_blank" class="mb-3 mx-3 flex items-center hover:underline">
+                    {% if item.track.album.name === 'Haram' %}
+                        <img src="{{ item.track.album.images[0].url }}" class="w-6 h-6 min-h-6 min-w-6 sm:w-6 sm:h-6 md:w-6 md:h-6 " alt="music cover art" style="filter: blur(10px)"/>
+                    {% else %}
+                        <img src="{{ item.track.album.images[0].url }}" class="w-6 h-6 min-h-6 min-w-6 sm:w-6 sm:h-6 md:w-6 md:h-6" alt="music cover art"/>
+                    {% endif %}
+                    {% if item.track.name.length > 60 %}
+                        <p class="text-sm px-3">{{ item.track.name.substring(0, 25) }}...</p>
+                    {% else %}
+                        <p class="text-sm px-3">{{ item.track.name }}</p>
+                    {% endif %}
+                    {# will add in later  #}
+                    {# <p> - {{artist_names}}</p> #}
+                </a>
+            {% endfor %}
+        {%- else -%}
+            <p>Loading ...
+            </p>
+        {% endif %}
+    </div>
+</div>

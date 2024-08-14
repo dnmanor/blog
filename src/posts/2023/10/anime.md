@@ -2,7 +2,7 @@
 templateEngineOverride: njk,md
 metaTitle: Anime
 metaDescription: Welcome to my blog
-title: Anime i like
+title: Anime I like
 description: Welcome
 subHeading: Welcome to yet another version of my personal blog
 tags: ["anime", "notes", "welcome"]
