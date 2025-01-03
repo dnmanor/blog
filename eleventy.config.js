@@ -86,16 +86,30 @@ export default async function (config) {
 
   config.addPassthroughCopy("./src/site.webmanifest");
 
-  /* Markdown Overrides */
+  /* Markdown Configuration */
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
     linkify: true,
+    typographer: true
+  }).use(markdownItAnchor, {
+    permalink: true,
+    permalinkClass: 'direct-link',
+    permalinkSymbol: '#'
   });
 
-  // config.addNunjucksFilter("markdownify", (markdownString) =>
-  //   md.render(markdownString)
-  // );
+markdownLibrary.renderer.rules.heading_open = function(tokens, idx) {
+  const level = tokens[idx].markup.length;
+  return `<h${level} class="heading-${level} font-bold text-2xl mt-8 mb-4">`;
+};
+
+markdownLibrary.renderer.rules.bullet_list_open = function() {
+  return '<ul class="list-disc ml-6 mb-6">';
+};
+
+markdownLibrary.renderer.rules.list_item_open = function() {
+  return '<li class="mb-2">';
+};
 
   config.setLibrary("md", markdownLibrary);
 

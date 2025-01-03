@@ -51,7 +51,9 @@ templateEngineOverride: njk,md
       {% block hero %}
         {% include '../../_components/_hero.njk' %}
       {% endblock hero %}
-      {{ content | safe }}
+      <div class="px-5 max-w-screen-xl lg:mx-auto">
+        {{ content | safe }}
+      </div>
     </main>
     {% block footer %}
       {% include "../../_components/_footer.njk" %}

@@ -1,24 +1,22 @@
 <ol class="mt-8 m-auto px-5 max-w-screen-xl">
   <p class="text-lg font-bold mb-3">Recent writings</p>
-  {% for post in postslist %}
-    {% if post.data.published %}
-      <div class="mb-3">
-        <article class="">
-          <div class="">
-            <h3>
-              <a href="{{ post.url | url }}" title="read {{ post.data.title }}" class="tracking-tighterpt-5 font-bold text-base">
-                {% if post.data.title %}
-                - {{ post.data.title }}
-                {% endif %}
-              </a>
-            </h3>
-            <p class="pt-1 text-gray-800 text-sm">
-              {{ post.data.subHeading }}
-              <time datetime="{{ post.date | htmlDateString }}" class="font-serif whitespace-nowrap text-gray-600 italic">&mdash; {{ post.date | readableDate }}</time>
-            </p>
-          </div>
+  {% for post in postslist -%}
+    {% if post.data.published -%}
+      <li class="mb-3">
+        <article>
+          <h3>
+            <a href="{{ post.url | url }}" title="read {{ post.data.title }}" class="tracking-tighterpt-5 font-bold text-base">
+              {%- if post.data.title -%}
+                {{ post.data.title }}
+              {%- endif -%}
+            </a>
+          </h3>
+          <p class="pt-1 text-gray-800 text-sm">
+            {{ post.data.subHeading }}
+            <time datetime="{{ post.date | htmlDateString }}" class="font-serif whitespace-nowrap text-gray-600 italic">&mdash; {{ post.date | readableDate }}</time>
+          </p>
         </article>
-      </div>
-    {% endif %}
-  {% endfor %}
+      </li>
+    {%- endif -%}
+  {%- endfor %}
 </ol>

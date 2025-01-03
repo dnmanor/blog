@@ -22,9 +22,11 @@ eleventyNavigation:
 ---
 
 
-{% block postslists %}
-  {% set postslist = pagination.items %}
-  {% include '../src/_components/_postslist.njk' %}
-{% endblock postslists %}
+{%- block postslists -%}
+  {%- set postslist = pagination.items -%}
+  {%- include '../src/_components/_postslist.njk' -%}
+{%- endblock postslists -%}
+
+
 
 

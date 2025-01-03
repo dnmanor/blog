@@ -34,7 +34,7 @@ export default async function () {
     let json = await EleventyFetch(
       `https://api.spotify.com/v1/me/player/recently-played?limit=30`,
       {
-        duration: "0s", // 1 day
+        duration: "1d", // 1 day
         type: "json",
         fetchOptions: {
           headers: {
