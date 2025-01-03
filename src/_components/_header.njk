@@ -1,4 +1,4 @@
-<div class="{%- if topColor -%}{{ topColor }}{%- endif -%} {% if page.url !== '/' %}pb-32 lg:pb-64{% endif %}">
+<div class="{%- if topColor -%}{{ topColor }}{%- endif -%}">
   <header
     class="relative max-w-screen-xl mx-auto h-24 p-5 md:flex md:justify-between md:items-center">
     <!-- logo -->
@@ -9,10 +9,12 @@
       {% set navPages = collections.all | eleventyNavigation %}
       <ul class="text-right">
         {%- for entry in navPages %}
-          <li class="inline-block mr-5">
-            <a href="{{ entry.url | url }}" class="font-bold transition-colorshover:text-black
-            {% if entry.url == page.url %}  text-black {% else %}text-gray-700 {% endif %}">{{ entry.title }}</a>
-          </li>
+          {%- if entry.url != '/feed.xml' %}
+            <li class="inline-block mr-5">
+              <a href="{{ entry.url | url }}" class="font-bold transition-colorshover:text-black
+              {% if entry.url == page.url%}  text-black {% else %}text-gray-700 {% endif %}">{{ entry.title }}</a>
+            </li>
+          {%- endif %}
         {%- endfor %}
       </ul>
     </nav>

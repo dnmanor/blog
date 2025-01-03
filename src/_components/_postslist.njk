@@ -6,12 +6,9 @@
         <article class="">
           <div class="">
             <h3>
-              - 
               <a href="{{ post.url | url }}" title="read {{ post.data.title }}" class="tracking-tighterpt-5 font-bold text-base">
                 {% if post.data.title %}
-                  {{ post.data.title }}
-                {% else %}
-                  <code>{{ post.url }}</code>
+                - {{ post.data.title }}
                 {% endif %}
               </a>
             </h3>

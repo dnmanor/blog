@@ -1,6 +1,8 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
-const fetch = require("node-fetch");
-require("dotenv").config();
+import EleventyFetch from "@11ty/eleventy-fetch";
+import fetch from "node-fetch";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function getAccessToken() {
   const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -18,7 +20,7 @@ async function getAccessToken() {
   return access_token;
 }
 
-module.exports = async function () {
+export default async function () {
   const accessToken = await getAccessToken();
   // const searchParams = new URLSearchParams({
   //   limit: limit,
@@ -32,7 +34,7 @@ module.exports = async function () {
     let json = await EleventyFetch(
       `https://api.spotify.com/v1/me/player/recently-played?limit=30`,
       {
-        duration: "1d", // 1 day
+        duration: "0s", // 1 day
         type: "json",
         fetchOptions: {
           headers: {

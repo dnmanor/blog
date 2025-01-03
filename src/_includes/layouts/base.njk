@@ -17,8 +17,12 @@
         <meta property="twitter:title" content="{{ metaTitle | safe }}">
         <meta property="twitter:description" content="{{ metaDescription | safe }}">
         <link rel="canonical" href="{{ page.url | url | absoluteUrl(metadata.url) }}"/>
+        {% if page.url === '/' %}
+            <link rel="stylesheet" href="./global.css"/>
+        {% else %}
+            <link rel="stylesheet" href="../global.css"/>
+        {% endif %}
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="./global.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -44,11 +48,11 @@
             {% include "../../_components/_header.njk" %}
         {% endblock %}
         {# {% if page.url === '/' %}
-            
-        {% endif %} #}
+                                    
+                                {% endif %} #}
         <main id="content" role="main">
-                            {{ content | safe }}
-                        </main>
+            {{ content | safe }}
+        </main>
         {% block footer %}
             {% include "../../_components/_footer.njk" %}
         {% endblock %}
