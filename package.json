@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify && npx @11ty/eleventy",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
     "start": "npx @11ty/eleventy --serve --quiet",
     "css": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch",
