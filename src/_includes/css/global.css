@@ -6,4 +6,8 @@
     html {
       font-family: "Roboto Mono", Arial, sans-serif;
     }
+
+    #hero a{
+      color: rgb(202 138 4 / var(--tw-text-opacity));
+    }
   }

@@ -450,6 +450,10 @@ html {
   font-family: "Roboto Mono", Arial, sans-serif;
 }
 
+#hero a{
+  color: rgb(202 138 4 / var(--tw-text-opacity));
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -713,11 +717,6 @@ html {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
-}
-
-.bg-yellow-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
 .bg-yellow-400 {
