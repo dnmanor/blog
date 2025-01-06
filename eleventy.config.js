@@ -29,6 +29,11 @@ export default async function (config) {
 
   config.addPassthroughCopy("./src/css/styles.css");
 
+  config.addPassthroughCopy({
+    "global.out.css": "global.css",
+  });
+
+
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   config.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
@@ -214,6 +219,16 @@ markdownLibrary.renderer.rules.list_item_open = function() {
   // https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
   // config.setServerPassthroughCopyBehavior("passthrough");
+
+  // Watch targets
+  config.addWatchTarget("content/**/*.{md,njk,html}");
+  config.addWatchTarget("src/**/*.{css,js}");
+  config.addWatchTarget("_includes/**/*.{njk,md}");
+  config.addWatchTarget("_data/**/*.{json,js}");
+  config.addWatchTarget("./_config/**/*.js");
+
+  // Enable passthrough copy for dev server
+  config.setServerPassthroughCopyBehavior("passthrough");
 }
 
 export const config = {
