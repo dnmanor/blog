@@ -10,6 +10,11 @@ eleventyNavigation:
 
 # 2025
 
+- 1984 (George Orwell)
+- Wage Labour and Capital (Karl Max)
+- The inner game of Tennis (Timothy Gallwey)
+- Dream Count (Chimamanda Ngozi Adichie)
+- Anne Frank (10 Days of her life as seen by David Colberet)
 - American Gods (Neil Gaiman)
 
 
