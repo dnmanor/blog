@@ -1,17 +1,17 @@
 <div class="relative max-w-screen-md mx-auto py-8 md:py-3 md:leading-tight text-center font-bold px-10">
     <div>
-        <a href="{{ metadata.author.mailtolink }}" title="get in touch" target="_blank" rel="noreferrer" class="text-yellow-600 tracking-tight py-4">reach me via email
+        <a href="{{ metadata.author.mailtolink }}" title="get in touch" target="_blank" rel="noreferrer" class="tracking-tight py-4">reach me via email
         </a>
     </div>
 </div>
 <!-- footer start -->
-<footer id="footer" class="md:pt-6 md:pb-16 border-t border-gray-200">
+<footer id="footer" class="md:pt-6 md:pb-16 border-t border-current">
     <div class="text-center md:text-left max-w-screen-xl m-auto sm:flex sm:justify-between sm:items-center text-sm pb-16 md:pb-0
             justify-end">
         <p class="p-5">
             <span class="inline-flex space-x-5 leading-tight">
                 {% for item, url in metadata.socials %}
-                    <a href="{{ url }}" target="_blank" rel="noreferrer" class="font-bold text-black" title="follow me on social">{{ item }}.</a>
+                    <a href="{{ url }}" target="_blank" rel="noreferrer" class="font-bold" title="follow me on social">{{ item }}.</a>
                 {% endfor %}
             </span>
         </p>

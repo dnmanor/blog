@@ -448,6 +448,8 @@ video {
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #e0dfdc;
+  color: #0c0c0c;
 }
 
 h1,
@@ -458,10 +460,14 @@ h1,
   h6,
   .font-bbh {
   font-family: "BBH Bartle", sans-serif;
+  letter-spacing: 0.05em;
 }
 
-#hero a {
-  color: rgb(202 138 4 / var(--tw-text-opacity));
+p a,
+  #hero h1,
+  .logo h2,
+  div>h1 {
+  color: #db4a2b;
 }
 
 *, ::before, ::after {
@@ -724,9 +730,8 @@ h1,
   border-top-width: 1px;
 }
 
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(226 232 240 / var(--tw-border-opacity));
+.border-current {
+  border-color: currentColor;
 }
 
 .bg-contain {
@@ -848,24 +853,8 @@ h1,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity));
-}
-
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(51 65 85 / var(--tw-text-opacity));
-}
-
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(30 41 59 / var(--tw-text-opacity));
-}
-
-.text-yellow-600 {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
+.underline {
+  text-decoration-line: underline;
 }
 
 .antialiased {
@@ -886,11 +875,6 @@ h1,
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {

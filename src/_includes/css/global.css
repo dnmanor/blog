@@ -5,6 +5,8 @@
 @layer base {
   body {
     font-family: Arial, sans-serif;
+    background-color: #e0dfdc;
+    color: #0c0c0c;
   }
 
   h1,
@@ -15,9 +17,13 @@
   h6,
   .font-bbh {
     font-family: "BBH Bartle", sans-serif;
+    letter-spacing: 0.05em;
   }
 
-  #hero a {
-    color: rgb(202 138 4 / var(--tw-text-opacity));
+  p a,
+  #hero h1,
+  .logo h2,
+  div>h1 {
+    color: #db4a2b;
   }
 }

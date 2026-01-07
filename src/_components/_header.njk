@@ -11,8 +11,8 @@
         {%- for entry in navPages %}
           {%- if entry.url != '/feed.xml' %}
             <li class="inline-block mr-5">
-              <a href="{{ entry.url | url }}" class="font-bold font-bbh transition-colors hover:text-black
-              {% if entry.url == page.url%}  text-black {% else %}text-gray-700 {% endif %}">{{ entry.title }}</a>
+              <a href="{{ entry.url | url }}" class="font-bold font-bbh transition-colors hover:underline
+              {% if entry.url == page.url%} underline {% endif %}">{{ entry.title }}</a>
             </li>
           {%- endif %}
         {%- endfor %}

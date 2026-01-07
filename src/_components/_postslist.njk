@@ -1,5 +1,5 @@
 <ol class="mt-8 m-auto px-5 max-w-screen-xl">
-  <h2 class="text-lg font-bold font-bbh mb-3">Recent writings</h2>
+  <h2 class="text-lg font-bold font-bbh mb-3 text-black">Recent writings</h2>
   {% for post in postslist -%}
     {% if post.data.published -%}
       <li class="mb-3">
@@ -11,9 +11,9 @@
               {%- endif -%}
             </a>
           </h3>
-          <p class="pt-1 text-gray-800 text-sm">
+          <p class="pt-1 text-sm">
             {{ post.data.subHeading }}
-            <time datetime="{{ post.date | htmlDateString }}" class="font-serif whitespace-nowrap text-gray-600 italic">&mdash; {{ post.date | readableDate }}</time>
+            <time datetime="{{ post.date | htmlDateString }}" class="font-serif whitespace-nowrap italic">&mdash; {{ post.date | readableDate }}</time>
           </p>
         </article>
       </li>
