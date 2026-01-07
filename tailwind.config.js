@@ -2,16 +2,17 @@ const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./src/**/*.njk", "./src/**/*.md", "./src/**/*.js", "./.*.js"],
+  content: ["./src/**/*.njk", "./src/**/*.md", "./src/**/*.js", "./.*.js"],
   darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
         roboto: ["Roboto Slab", "serif"],
+        bbh: ["BBH Bartle", "sans-serif"],
       },
     },
     colors: {
-      gray: colors.blueGray,
+      gray: colors.slate,
       purple: colors.purple,
       orange: colors.orange,
       rose: colors.rose,

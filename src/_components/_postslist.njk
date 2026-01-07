@@ -1,11 +1,11 @@
 <ol class="mt-8 m-auto px-5 max-w-screen-xl">
-  <p class="text-lg font-bold mb-3">Recent writings</p>
+  <h2 class="text-lg font-bold font-bbh mb-3">Recent writings</h2>
   {% for post in postslist -%}
     {% if post.data.published -%}
       <li class="mb-3">
         <article>
           <h3>
-            <a href="{{ post.url | url }}" title="read {{ post.data.title }}" class="tracking-tighterpt-5 font-bold text-base">
+            <a href="{{ post.url | url }}" title="read {{ post.data.title }}" class="tracking-tighter pt-5 font-bold font-bbh text-base">
               {%- if post.data.title -%}
                 {{ post.data.title }}
               {%- endif -%}

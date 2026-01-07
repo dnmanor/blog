@@ -1,9 +1,11 @@
 <div class="px-5 max-w-screen-xl lg:mx-auto mt-8">
-    <p class="text-lg font-bold mb-3">What I last listened to ...</p>
-    <div class="flex flex-col items-start w-full"> <!-- Changed items-center to items-start -->
+    <h2 class="text-lg font-bold font-bbh mb-3">What I last listened to ...</h2>
+    <div
+        class="flex flex-col items-start w-full">
+        <!-- Changed items-center to items-start -->
         {% if music.recent_music %}
             {% for item in music.recent_music %}
-            {# {% set artist_names = item.track.album.artists | map('name') | join(', ') %} #}
+                {# {% set artist_names = item.track.album.artists | map('name') | join(', ') %} #}
                 <a href="{{ item.track.external_urls.spotify }}" target="_blank" class="mb-3 mx-3 flex items-center hover:underline">
                     {% if item.track.album.name === 'Haram' %}
                         <img src="{{ item.track.album.images[0].url }}" class="w-6 h-6 min-h-6 min-w-6 sm:w-6 sm:h-6 md:w-6 md:h-6 " alt="music cover art" style="filter: blur(10px)"/>
@@ -24,4 +26,15 @@
             </p>
         {% endif %}
     </div>
-</div>
+    <h2 class="text-lg font-bold font-bbh mb-3 mt-20">I wake myself up with this most mornings ...</h2>
+    <iframe
+        data-testid="embed-iframe"
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/74CInNgYfd99b12bUgGEO7?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+</div></div>

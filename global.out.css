@@ -446,11 +446,21 @@ video {
   display: none;
 }
 
-html {
-  font-family: "Roboto Mono", Arial, sans-serif;
+body {
+  font-family: Arial, sans-serif;
 }
 
-#hero a{
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-bbh {
+  font-family: "BBH Bartle", sans-serif;
+}
+
+#hero a {
   color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
@@ -604,6 +614,10 @@ html {
   margin-top: 0.25rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -672,10 +686,6 @@ html {
   max-width: 1280px;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
@@ -719,11 +729,6 @@ html {
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
-.bg-yellow-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
-}
-
 .bg-contain {
   background-size: contain;
 }
@@ -734,10 +739,6 @@ html {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .p-5 {
@@ -787,6 +788,10 @@ html {
   padding-top: 0.25rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -799,8 +804,8 @@ html {
   text-align: right;
 }
 
-.font-roboto {
-  font-family: Roboto Slab, serif;
+.font-bbh {
+  font-family: BBH Bartle, sans-serif;
 }
 
 .text-base {
@@ -867,10 +872,6 @@ html {
   color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -885,9 +886,15 @@ html {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.hover\:text-gray-800:hover {
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.hover\:text-black:hover {
   --tw-text-opacity: 1;
-  color: rgb(30 41 59 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {

@@ -1,62 +1,9 @@
 ---
+layout: /layouts/base.njk
 templateEngineOverride: njk,md
 ---
 
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ metaTitle | safe }}</title>
-    <meta name="title" content="{{ metaTitle | safe }} — {{ metaDescription | safe }}">
-    <meta name="description" content="{{ metaDescription | safe }}">
-    <meta
-    name="robots" content="follow, index"/> <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ page.url | url | absoluteUrl(metadata.url) }}">
-    <meta property="og:title" content="{{ metaTitle | safe }}">
-    <meta property="og:description" content="{{ metaDescription | safe }}">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ page.url | url | absoluteUrl(metadata.url) }}">
-    <meta property="twitter:title" content="{{ metaTitle | safe }}">
-    <meta property="twitter:description" content="{{ metaDescription | safe }}">
-    <link rel="canonical" href="{{ page.url | url | absoluteUrl(metadata.url) }}"/>
-    <link rel="stylesheet" href="/global.css"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet">
-    <link
-      rel="icon"
-      href="https://res.cloudinary.com/dnmanor/image/upload/v1723488631/vwdio1cchljgjbsm0owi.svg"
-      type="image/svg+xml">
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="mask-icon" href="../img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap"
-      rel="stylesheet">
-  </head>
-  <body class="font-roboto h-full text-black antialiased bg-no-repeat bg-top bg-contain">
-    {% block header %}
-      {% include "../../_components/_header.njk" %}
-    {% endblock %}
-    <main id="content" role="main">
-      {% block hero %}
-        {% include '../../_components/_hero.njk' %}
-      {% endblock hero %}
-      <div class="px-5 max-w-screen-xl lg:mx-auto">
-        {{ content | safe }}
-      </div>
-    </main>
-    {% block footer %}
-      {% include "../../_components/_footer.njk" %}
-    {% endblock %}
-  </body>
-</html>
+{% include '../../_components/_hero.njk' %}
+<div class="px-5 max-w-screen-xl lg:mx-auto">
+  {{ content | safe }}
+</div>

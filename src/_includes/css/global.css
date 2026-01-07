@@ -3,11 +3,21 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-      font-family: "Roboto Mono", Arial, sans-serif;
-    }
-
-    #hero a{
-      color: rgb(202 138 4 / var(--tw-text-opacity));
-    }
+  body {
+    font-family: Arial, sans-serif;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-bbh {
+    font-family: "BBH Bartle", sans-serif;
+  }
+
+  #hero a {
+    color: rgb(202 138 4 / var(--tw-text-opacity));
+  }
+}
