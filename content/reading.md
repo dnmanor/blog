@@ -10,6 +10,15 @@ eleventyNavigation:
 # 2026
 - Musashi (Eiji Yoshikawa)
 - Choujin X (Sui Ishida)
+- Beyond Good and Evil (Friedrich Nietzsche)
+- Thus spoke Zarathustra (Friedrich Nietzsche)
+- Wimbledon: The Official History (John Barrett)
+- The Road to Serfdom (Friedrich A. Hayek)
+- Capitalism and Freedom (Milton Friedman)
+- Painting Luminous Portraits for Artists (Steve Forster)
+- Against Empire (Michael Parenti)  
+- Blackshirts and Reds (Michael Parenti)
+
 
 
 # 2025
