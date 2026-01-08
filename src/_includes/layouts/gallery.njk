@@ -1,0 +1,115 @@
+---
+layout: /layouts/base.njk
+---
+
+{% include '../../_components/_hero.njk' %}
+
+<div class="px-5 max-w-screen-xl lg:mx-auto">
+  <!-- Masonry Grid -->
+  <div class="columns-1 md:columns-2 lg:columns-3 gap-8 py-8">
+      {{ content | safe }}
+  </div>
+</div>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <!-- Close Button -->
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-gray-300 focus:outline-none z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+
+    <!-- Navigation Arrows -->
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 focus:outline-none hidden md:block z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 focus:outline-none hidden md:block z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
+
+    <!-- Main Image Container -->
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+        <img id="lightbox-img" src="" alt="Full screen preview" class="max-w-full max-h-full object-contain shadow-2xl transition-transform duration-300 scale-95 opacity-0">
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const images = Array.from(document.querySelectorAll('.columns-1 img'));
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+        currentIndex = index;
+        const img = images[index];
+        const largeSrc = img.dataset.large || img.src;
+        
+        lightboxImg.src = largeSrc;
+        lightbox.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            lightbox.classList.remove('opacity-0');
+            lightboxImg.classList.remove('scale-95', 'opacity-0');
+        });
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.add('opacity-0');
+        lightboxImg.classList.add('scale-95', 'opacity-0');
+        
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+        }, 300); // Match transition duration
+    };
+
+    const showNext = (e) => {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        openLightbox(currentIndex);
+    };
+
+    const showPrev = (e) => {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openLightbox(currentIndex);
+    };
+
+    images.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            openLightbox(index);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.closest('.flex')) { 
+             closeLightbox();
+        }
+    });
+
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
+});
+</script>

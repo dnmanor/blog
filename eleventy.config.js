@@ -10,7 +10,7 @@ import markdownIt from "markdown-it";
 import markdownitlinkatt from "markdown-it-link-attributes";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import markdownItAnchor from "markdown-it-anchor";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 // ... rest of the file remains the same ...
 
 import pluginFilters from "./_config/filters.js";
@@ -103,18 +103,18 @@ export default async function (config) {
     permalinkSymbol: '#'
   });
 
-markdownLibrary.renderer.rules.heading_open = function(tokens, idx) {
-  const level = tokens[idx].markup.length;
-  return `<h${level} class="heading-${level} font-bold text-2xl mt-8 mb-4">`;
-};
+  markdownLibrary.renderer.rules.heading_open = function (tokens, idx) {
+    const level = tokens[idx].markup.length;
+    return `<h${level} class="heading-${level} font-bold text-2xl mt-8 mb-4">`;
+  };
 
-markdownLibrary.renderer.rules.bullet_list_open = function() {
-  return '<ul class="list-disc ml-6 mb-6">';
-};
+  markdownLibrary.renderer.rules.bullet_list_open = function () {
+    return '<ul class="list-disc ml-6 mb-6">';
+  };
 
-markdownLibrary.renderer.rules.list_item_open = function() {
-  return '<li class="mb-2">';
-};
+  markdownLibrary.renderer.rules.list_item_open = function () {
+    return '<li class="mb-2">';
+  };
 
   config.setLibrary("md", markdownLibrary);
 
@@ -206,6 +206,25 @@ markdownLibrary.renderer.rules.list_item_open = function() {
     // by default we use Eleventy’s built-in `slugify` filter:
     // slugify: config.getFilter("slugify"),
     // selector: "h1,h2,h3,h4,h5,h6", // default
+  });
+
+  config.addNunjucksAsyncShortcode("galleryImage", async function (src, alt) {
+    // Determine the full path relative to project root
+    // src is expected to be something like "content/img/photos/1.png"
+    let metadata = await eleventyImage(src, {
+      widths: [600, 1200],
+      formats: ["avif", "webp", "jpeg"],
+      urlPath: "/img/photos/",
+      outputDir: "./_site/img/photos/",
+      sharpAvifOptions: { quality: 90 },
+      sharpWebpOptions: { quality: 90 },
+      sharpJpegOptions: { quality: 90 },
+    });
+
+    let lowSrc = metadata.jpeg[0];
+    let highSrc = metadata.jpeg[1] || metadata.jpeg[0];
+
+    return `<img src="${lowSrc.url}" width="${lowSrc.width}" height="${lowSrc.height}" data-large="${highSrc.url}" alt="${alt}" eleventy:ignore class="break-inside-avoid mb-8 w-full rounded-lg shadow-md hover:scale-[1.02] transition-transform cursor-zoom-in" loading="lazy" decoding="async">`;
   });
 
   config.addShortcode("currentBuildDate", () => {
