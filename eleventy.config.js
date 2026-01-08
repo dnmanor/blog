@@ -224,7 +224,13 @@ export default async function (config) {
     let lowSrc = metadata.jpeg[0];
     let highSrc = metadata.jpeg[1] || metadata.jpeg[0];
 
-    return `<img src="${lowSrc.url}" width="${lowSrc.width}" height="${lowSrc.height}" data-large="${highSrc.url}" alt="${alt}" eleventy:ignore class="break-inside-avoid mb-8 w-full rounded-lg shadow-md hover:scale-[1.02] transition-transform cursor-zoom-in" loading="lazy" decoding="async">`;
+    return `<picture>
+      ${Object.values(metadata).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat[0].url}" media="(max-width: 600px)">
+                  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat[1] ? imageFormat[1].url : imageFormat[0].url}" media="(min-width: 601px)">`;
+    }).join("\n")}
+      <img src="${lowSrc.url}" width="${lowSrc.width}" height="${lowSrc.height}" data-large="${highSrc.url}" alt="${alt}" eleventy:ignore class="break-inside-avoid mb-8 w-full rounded-lg shadow-md hover:scale-[1.02] transition-transform cursor-zoom-in" loading="lazy" decoding="async">
+    </picture>`;
   });
 
   config.addShortcode("currentBuildDate", () => {
