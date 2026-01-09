@@ -7,7 +7,7 @@
 {% else %}
   {% set currentTitle = metadata.name %}
 {% endif %}
-{% set currentDescription = metaDescription or description or metadata.description %}
+{% set currentDescription = description or metaDescription or metadata.description %}
 {% set currentImage = (ogImage or metadata.ogImage) | url | absoluteUrl(metadata.url) %}
 
 <title>{{ currentTitle }}</title>
