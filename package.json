@@ -1,6 +1,15 @@
 {
   "name": "dnmanor_blog",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "main": "index.js",
   "scripts": {
     "build": "tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify && npx @11ty/eleventy",

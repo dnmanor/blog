@@ -98,9 +98,11 @@ export default async function (config) {
     linkify: true,
     typographer: true
   }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: 'direct-link',
-    permalinkSymbol: '#'
+    permalink: markdownItAnchor.permalink.ariaHidden({
+      placement: 'after',
+      class: 'direct-link',
+      symbol: '#'
+    })
   });
 
   markdownLibrary.renderer.rules.heading_open = function (tokens, idx) {
