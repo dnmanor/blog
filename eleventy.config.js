@@ -131,6 +131,7 @@ export default async function (config) {
   // For example, `./public/css/` ends up in `_site/css/`
   config.addPassthroughCopy({
     "./public/": "/",
+    "./content/img/og/": "/img/og/"
   });
 
   // Run Eleventy when these files change:

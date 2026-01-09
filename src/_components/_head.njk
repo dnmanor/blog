@@ -1,18 +1,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ metaTitle | safe }}</title>
-<meta name="title" content="{{ metaTitle | safe }} — {{ metaDescription | safe }}">
-<meta name="description" content="{{ metaDescription | safe }}">
-<meta
-name="robots" content="follow, index"/> <!-- Open Graph / Facebook -->
+{% set currentUrl = page.url | url | absoluteUrl(metadata.url) %}
+{% set currentTitle = (metaTitle or title) %}
+{% if currentTitle and currentTitle != metadata.name %}
+  {% set currentTitle = currentTitle + " — " + metadata.name %}
+{% else %}
+  {% set currentTitle = metadata.name %}
+{% endif %}
+{% set currentDescription = metaDescription or description or metadata.description %}
+{% set currentImage = (ogImage or metadata.ogImage) | url | absoluteUrl(metadata.url) %}
+
+<title>{{ currentTitle }}</title>
+<meta name="description" content="{{ currentDescription }}">
+<meta name="robots" content="follow, index"/>
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ page.url | url | absoluteUrl(metadata.url) }}">
-<meta property="og:title" content="{{ metaTitle | safe }}">
-<meta property="og:description" content="{{ metaDescription | safe }}">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ page.url | url | absoluteUrl(metadata.url) }}">
-<meta property="twitter:title" content="{{ metaTitle | safe }}">
-<meta property="twitter:description" content="{{ metaDescription | safe }}">
+<meta property="og:url" content="{{ currentUrl }}">
+<meta property="og:title" content="{{ currentTitle }}">
+<meta property="og:description" content="{{ currentDescription }}">
+<meta property="og:image" content="{{ currentImage }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="dnmanor.com">
+<meta property="twitter:url" content="{{ currentUrl }}">
+<meta name="twitter:title" content="{{ currentTitle }}">
+<meta name="twitter:description" content="{{ currentDescription }}">
+<meta name="twitter:image" content="{{ currentImage }}">
 <link rel="canonical" href="{{ page.url | url | absoluteUrl(metadata.url) }}"/>
 <link rel="stylesheet" href="{{ '/global.css' | url }}"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
