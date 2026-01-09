@@ -57,6 +57,45 @@ eleventyNavigation:
 {% galleryImage "content/img/photos/chinatown_one.JPG", "chinatown_one" %}
 {% galleryImage "content/img/photos/IMG_9019.JPG", "IMG_9019" %}
 {% galleryImage "content/img/photos/rm_two.JPG", "rm_two" %}
+{% galleryImage "content/img/photos/IMG_0331.JPG", "IMG_0331" %}
+{% galleryImage "content/img/photos/IMG_0338.JPG", "IMG_0338" %}
+{% galleryImage "content/img/photos/IMG_4103.JPG", "IMG_4103" %}
+{% galleryImage "content/img/photos/IMG_4105.JPG", "IMG_4105" %}
+{% galleryImage "content/img/photos/IMG_4160.JPG", "IMG_4160" %}
+{% galleryImage "content/img/photos/IMG_4172.JPG", "IMG_4172" %}
+{% galleryImage "content/img/photos/IMG_6696.JPG", "IMG_6696" %}
+{% galleryImage "content/img/photos/IMG_6714.JPG", "IMG_6714" %}
+{% galleryImage "content/img/photos/IMG_6739.JPG", "IMG_6739" %}
+{% galleryImage "content/img/photos/IMG_6946.jpg", "IMG_6946" %}
+{% galleryImage "content/img/photos/IMG_7942.jpg", "IMG_7942" %}
+{% galleryImage "content/img/photos/IMG_8142.JPG", "IMG_8142" %}
+{% galleryImage "content/img/photos/IMG_8175.JPG", "IMG_8175" %}
+{% galleryImage "content/img/photos/IMG_8208.JPG", "IMG_8208" %}
+{% galleryImage "content/img/photos/IMG_8230.jpg", "IMG_8230" %}
+{% galleryImage "content/img/photos/IMG_8404.JPG", "IMG_8404" %}
+{% galleryImage "content/img/photos/IMG_8462.JPG", "IMG_8462" %}
+{% galleryImage "content/img/photos/IMG_9118.JPG", "IMG_9118" %}
+{% galleryImage "content/img/photos/IMG_9126.jpg", "IMG_9126" %}
+{% galleryImage "content/img/photos/IMG_9172.JPG", "IMG_9172" %}
+{% galleryImage "content/img/photos/IMG_9259.JPG", "IMG_9259" %}
+{% galleryImage "content/img/photos/IMG_9270.JPG", "IMG_9270" %}
+{% galleryImage "content/img/photos/IMG_9297.JPG", "IMG_9297" %}
+{% galleryImage "content/img/photos/IMG_9317.JPG", "IMG_9317" %}
+{% galleryImage "content/img/photos/IMG_9839.JPG", "IMG_9839" %}
+{% galleryImage "content/img/photos/IMG_9928.JPG", "IMG_9928" %}
+{% galleryImage "content/img/photos/IMG_0728.jpg", "IMG_0728" %}
+{% galleryImage "content/img/photos/IMG_0733.jpg", "IMG_0733" %}
+{% galleryImage "content/img/photos/IMG_2896.jpg", "IMG_2896" %}
+{% galleryImage "content/img/photos/IMG_2942.jpg", "IMG_2942" %}
+{% galleryImage "content/img/photos/IMG_2964.jpg", "IMG_2964" %}
+{% galleryImage "content/img/photos/IMG_3002.jpg", "IMG_3002" %}
+{% galleryImage "content/img/photos/IMG_3009.jpg", "IMG_3009" %}
+{% galleryImage "content/img/photos/IMG_3216.jpg", "IMG_3216" %}
+{% galleryImage "content/img/photos/IMG_3230.jpg", "IMG_3230" %}
+{% galleryImage "content/img/photos/IMG_3278.jpg", "IMG_3278" %}
+{% galleryImage "content/img/photos/IMG_3326.jpg", "IMG_3326" %}
+
+
 
 <!-- {% galleryImage "content/img/photos/idols.JPG", "idols" %}
 {% galleryImage "content/img/photos/IMG_8535.JPG", "IMG_8535" %}
