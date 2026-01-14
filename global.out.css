@@ -1113,6 +1113,15 @@ p a,
   transition-duration: 300ms;
 }
 
+#hero a {
+  color: #963117;
+  text-decoration: underline;
+}
+
+#hero a:hover {
+  color: black;
+}
+
 .break-inside-avoid {
   -moz-column-break-inside: avoid;
        break-inside: avoid;

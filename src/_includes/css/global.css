@@ -28,6 +28,15 @@
   }
 }
 
+#hero a {
+  color: #963117;
+  text-decoration: underline;
+}
+
+#hero a:hover {
+  color: black;
+}
+
 .break-inside-avoid {
   break-inside: avoid;
 }
