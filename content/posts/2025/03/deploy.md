@@ -8,7 +8,7 @@ subHeading: Quickly deploy react app
 tags: ["react", "deployment"]
 date: 2025-03-18
 updated:
-published: true
+published: false
 ---
 
 <div class="col-start-3 col-end-9">
