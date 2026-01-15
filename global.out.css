@@ -465,8 +465,7 @@ h1,
 
 p a,
   #hero h1,
-  .logo h2,
-  div>h1 {
+  .logo h2 {
   color: #db4a2b;
 }
 
