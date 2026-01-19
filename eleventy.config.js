@@ -89,7 +89,7 @@ export default async function (config) {
     return [...tagSet];
   });
 
-  config.addPassthroughCopy("./src/site.webmanifest");
+  config.addPassthroughCopy({ "./content/site.webmanifest": "/site.webmanifest" });
 
   /* Markdown Configuration */
   let markdownLibrary = markdownIt({
@@ -134,7 +134,8 @@ export default async function (config) {
   config.addPassthroughCopy({
     "./public/": "/",
     "./content/img/og/": "/img/og/",
-    "./content/img/icon/": "/img/icon/"
+    "./content/img/icon/": "/img/icon/",
+    "./content/robots.txt": "/robots.txt"
   });
 
   // Run Eleventy when these files change:

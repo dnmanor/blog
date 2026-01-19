@@ -1,10 +1,11 @@
 export default {
-	"name": "David Manor",
-	"description": "Software engineer, exploring and tinkering.",
+	"name": "David Nuertey Manor",
+	"description": "David Nuertey Manor — Software engineer, exploring and tinkering.",
 	"url": "https://dnmanor.com/",
 	"ogImage": "/img/og/og.JPG",
+	"keywords": "David Nuertey Manor, David Manor, Nuertey Manor, David N Manor, dnmanor, software engineer",
 	"author": {
-		"name": "David Manor",
+		"name": "David Nuertey Manor",
 		"email": "hi@dnmanor.com",
 		"url": "https://dnmanor.com/",
 		"avatar": "./img/avatar-new_1.webp",

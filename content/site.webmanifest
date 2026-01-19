@@ -1,8 +1,7 @@
 {
-  "name": "Davids's personal site & portfolio",
-  "short_name": "david",
-  "icons": [
-  ],
+  "name": "David Nuertey Manor - Personal Site & Portfolio",
+  "short_name": "David Manor",
+  "icons": [],
   "theme_color": "",
   "background_color": "",
   "display": "standalone",
