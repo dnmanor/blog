@@ -38,12 +38,12 @@ eleventyNavigation:
 {% galleryImage "content/img/photos/IMG_0733.jpg", "IMG_0733" %}
 {% galleryImage "content/img/photos/IMG_8319.JPG", "IMG_8319" %}
 {% galleryImage "content/img/photos/IMG_9839.JPG", "IMG_9839" %}
-{% galleryImage "content/img/photos/flowers12.JPG", "flower" %}
+{% galleryImage "content/img/photos/flowers12.jpg", "flower" %}
 {% galleryImage "content/img/photos/IMG_1045.JPG", "IMG_1045" %}
 {% galleryImage "content/img/photos/IMG_3230.jpg", "IMG_3230" %}
 {% galleryImage "content/img/photos/IMG_9368.JPG", "IMG_9368" %}
 {% galleryImage "content/img/photos/IMG_8175.JPG", "IMG_8175" %}
-{% galleryImage "content/img/photos/adome.JPG", "adome bridge" %}
+{% galleryImage "content/img/photos/adome.jpg", "adome bridge" %}
 {% galleryImage "content/img/photos/IMG_9404.JPG", "IMG_9404" %}
 {% galleryImage "content/img/photos/IMG_9145.JPG", "IMG_9145" %}
 {% galleryImage "content/img/photos/IMG_6946.jpg", "IMG_6946" %}
@@ -82,7 +82,7 @@ eleventyNavigation:
 {% galleryImage "content/img/photos/IMG_0331.JPG", "IMG_0331" %}
 {% galleryImage "content/img/photos/tennis_court.JPG", "tennis_court" %}
 {% galleryImage "content/img/photos/IMG_9118.JPG", "IMG_9118" %}
-{% galleryImage "content/img/photos/canoe.JPG", "man pissing in lake volta" %}
+{% galleryImage "content/img/photos/canoe.jpg", "man pissing in lake volta" %}
 {% galleryImage "content/img/photos/IMG_8208.JPG", "IMG_8208" %}
 {% galleryImage "content/img/photos/cas_four.JPG", "cas_four" %}
 {% galleryImage "content/img/photos/tents.JPG", "tents" %}
@@ -102,7 +102,7 @@ eleventyNavigation:
 {% galleryImage "content/img/photos/IMG_1162.JPG", "IMG_1162" %}
 {% galleryImage "content/img/photos/street5.JPG", "street5" %}
 {% galleryImage "content/img/photos/IMG_4105.JPG", "IMG_4105" %}
-{% galleryImage "content/img/photos/flower10.JPG", "flower" %}
+{% galleryImage "content/img/photos/flower10.jpg", "flower" %}
 {% galleryImage "content/img/photos/IMG_8404.JPG", "IMG_8404" %}
 {% galleryImage "content/img/photos/u2.JPG", "u2" %}
 {% galleryImage "content/img/photos/chinatown_two.JPG", "chinatown_two" %}
